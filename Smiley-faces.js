@@ -37,4 +37,6 @@ function countSmileys(arr) {
     }
     }
   return count;
-  }
+}
+
+// or
