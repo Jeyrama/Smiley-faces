@@ -40,3 +40,34 @@ function countSmileys(arr) {
 }
 
 // or
+
+
+const smileyIsValid = smiley => 
+  smiley.length === 3 || smiley.length === 2
+
+const smileyHasValidEye = smiley => {
+  const maybeEye = smiley.charAt(0)
+  return maybeEye === ':' || maybeEye === ';'
+}
+
+const smileyHasNose = smiley =>
+  smiley.length === 3
+
+const smileyHasValidNose = smiley => {
+  const maybeNose = smiley.charAt(1)
+  return smileyHasNose(smiley) ? maybeNose === '-' || maybeNose === '~' : true
+}
+
+const smileyHasValidMouth = smiley => {
+  const maybeMouth = smileyHasNose(smiley) ? smiley.charAt(2) : smiley.charAt(1)
+  return maybeMouth === ')' || maybeMouth === 'D'
+}
+
+//return the total number of smiling faces in the array
+const countSmileys = smileys => 
+  smileys.filter(smiley => 
+    smileyIsValid(smiley) &&
+    smileyHasValidEye(smiley) &&
+    smileyHasValidNose(smiley) &&
+    smileyHasValidMouth(smiley)
+  ).length
