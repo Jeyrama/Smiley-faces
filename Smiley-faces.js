@@ -21,3 +21,6 @@ Note:
   You will not be tested with invalid input (input will always be an array). 
   Order of the face (eyes, nose, mouth) elements will always be the same.
 */
+
+
+// Solution
